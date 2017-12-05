@@ -1,3 +1,6 @@
+from tkinter import *
+c=Canvas()
+c.pack()
 def priserka1(x,y):
   c.create_rectangle(x-10,y-20,x+10,y-15, fill='blue', outline='blue')
   c.create_rectangle(x-20,y-15,x+20,y-10, fill='blue', outline='blue')
