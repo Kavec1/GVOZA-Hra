@@ -5,3 +5,4 @@ Hitboxy -
 Skóre -
 Ovládnie -
 Zvuk -
+Dokumentácia -
