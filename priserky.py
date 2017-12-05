@@ -1,7 +1,3 @@
-import tkinter
-c=tkinter.Canvas()
-c.pack()
-
 x=100
 y=100
 
