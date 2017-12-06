@@ -4,5 +4,6 @@ Prostredie -
 Hitboxy -
 Skóre -
 Ovládnie -
+Timer - neodskúšané
 Zvuk??? -
 Dokumentácia -
