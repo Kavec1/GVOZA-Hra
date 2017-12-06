@@ -1,1 +1,10 @@
-
+Cieľ hry:
+Zameranie hry:
+Veková skupina používateľov:
+Podobné aplikácie, ich klady a zápory:
+Ovládanie aplikácie:
+Úrovne náročnosti:
+Nastavenie prostredia:
+Návrh aplikácie:
+  Scéna:
+  Postavy:
