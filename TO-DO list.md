@@ -4,5 +4,5 @@ Prostredie -
 Hitboxy -
 Skóre -
 Ovládnie -
-Zvuk -
+Zvuk??? -
 Dokumentácia -
