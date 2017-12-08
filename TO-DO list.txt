@@ -1,9 +1,9 @@
-Príšerky -
+﻿Príšerky -
 Raketka -
 Prostredie -
 Hitboxy -
 Skóre -
 Ovládnie -
-Timer - neodskúšané
+Threading - 
 Zvuk??? -
 Dokumentácia -

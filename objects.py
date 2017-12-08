@@ -1,6 +1,4 @@
-from tkinter import *
-c=Canvas()
-c.pack()
+from init import *
 def priserka1(x,y):
   c.create_rectangle(x-10,y-20,x+10,y-15, fill='blue', outline='blue')
   c.create_rectangle(x-20,y-15,x+20,y-10, fill='blue', outline='blue')
@@ -31,3 +29,7 @@ def priserka2(x,y):
   c.create_rectangle(x-10,y+15,x-5,y+20, fill='green', outline='green')
   c.create_rectangle(x+5,y+15,x+10,y+20, fill='green', outline='green')
   c.create_rectangle(x+15,y+15,x+20,y+20, fill='green', outline='green')
+c.create_oval(10,10,50,50, tags = 'ujco')
+c.create_oval(20,20,25,25, tags = 'ujco')
+c.create_oval(35,20,40,25, tags = 'ujco')
+c.create_line(20,40,40,40, tags = 'ujco')
