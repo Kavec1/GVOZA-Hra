@@ -1,10 +1,9 @@
-Cieľ hry:
-Zameranie hry:
+Cieľ aplikácie:
+Zameranie aplikácie: (pedagogický / zábavný / systémový ...softvér / a presnejšie hry / simulácie / živé knihy / editory a pod.)
 Veková skupina používateľov:
-Podobné aplikácie, ich klady a zápory:
+Spôsob práce: (individuálna hra/ dvaja hráči / skupina)
+Podobné aplikácie, ich klady a zápory (zhodnoťte aspoň 2 aplikácie rovnakého typu, screenshot)
 Ovládanie aplikácie:
-Úrovne náročnosti:
-Nastavenie prostredia:
-Návrh aplikácie:
-  Scéna:
-  Postavy:
+Rozhranie aplikácie: (grafické / textové)
+Úrovne náročnosti: (či hra poskytuje nejaké levely, možnosť vybrať si ťažšiu a ľahšiu úroveň)
+Nastavenia prostredia: (či sa dá zmeniť pozadie, nastaviť veľkosť hracej plochy, postavy a pod., ak áno, ako sa to dá)
