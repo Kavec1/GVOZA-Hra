@@ -2,7 +2,7 @@ Cieľ aplikácie: zničit všetky vesmírne príšery
 Zameranie aplikácie: zábavný/vyhrať
 Veková skupina používateľov:
 Spôsob práce: individuálna hra
-Podobné aplikácie, ich klady a zápory (zhodnoťte aspoň 2 aplikácie rovnakého typu, screenshot)
+Podobné aplikácie, ich klady a zápory: Galag (zhodnoťte aspoň 2 aplikácie rovnakého typu, screenshot)
 Ovládanie aplikácie:
 Rozhranie aplikácie: (grafické / textové)
 Úrovne náročnosti: (či hra poskytuje nejaké levely, možnosť vybrať si ťažšiu a ľahšiu úroveň)
