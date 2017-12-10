@@ -1,9 +1,9 @@
-﻿Príšerky -
-Raketka -
-Prostredie -
+Príšerky - 2/3 
+Raketka - 
+Prostredie - nedokončené
 Hitboxy -
 Skóre -
 Ovládnie -
 Threading - 
 Zvuk??? -
-Dokumentácia -
+Dokumentácia - hotová
