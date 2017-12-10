@@ -3,8 +3,7 @@ Zameranie aplikácie: zábavný/vyhrať
 Veková skupina používateľov: 10+
 Spôsob práce: individuálna hra
 Podobné aplikácie, ich klady a zápory: Galag
-Ovládanie aplikácie: zatiaľ šípky, konečná hra by mala byť ovládaná
-myšou)
+Ovládanie aplikácie: myš
 Rozhranie aplikácie: grafické
 Úrovne náročnosti: postupné zvyšovanie levelov
 Nastavenia prostredia: dalo by sa ale je to zbytočne komplikované a časovo náročné
