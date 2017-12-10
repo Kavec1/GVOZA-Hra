@@ -1,6 +1,7 @@
 import tkinter
 c=tkinter.Canvas()
 c.pack()
+x=y=100
 
 ##raketka
 c.create_rectangle(x,y-20,x+10,y-10,fill='white', outline='white')

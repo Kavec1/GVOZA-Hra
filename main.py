@@ -5,5 +5,5 @@ from move import *
 
 priserka1(100,100)
 priserka2(200,200)
-raketa (50,50)
+raketka (0,0)
 c.bind('<Motion>', move)
