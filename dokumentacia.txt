@@ -1,7 +1,7 @@
-Cieľ aplikácie:
-Zameranie aplikácie: (pedagogický / zábavný / systémový ...softvér / a presnejšie hry / simulácie / živé knihy / editory a pod.)
+Cieľ aplikácie: zničit všetky vesmírne príšery
+Zameranie aplikácie: zábavný/vyhrať
 Veková skupina používateľov:
-Spôsob práce: (individuálna hra/ dvaja hráči / skupina)
+Spôsob práce: individuálna hra
 Podobné aplikácie, ich klady a zápory (zhodnoťte aspoň 2 aplikácie rovnakého typu, screenshot)
 Ovládanie aplikácie:
 Rozhranie aplikácie: (grafické / textové)
