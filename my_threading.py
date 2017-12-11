@@ -1,6 +1,8 @@
 import threading
 from move import *
+from randm import *
 from objects import *
+from time import *
 
 def pohyb_raketa():
     raketka(0,0)
