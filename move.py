@@ -1,7 +1,7 @@
 from init import *
 x=[0,0]
 y=[0,0]
-def move(udalost):
+def move_raketa(udalost):
     x[0]=udalost.x
     y[0]=udalost.y
     print(str(x),str(y))    
