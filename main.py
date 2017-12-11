@@ -3,9 +3,15 @@ from objects import *
 from move import *
 from my_threading import *
 
-priserka1(100,100)
-priserka2(200,200)
-raketka (0,0)
-pohyb.start()
+def main():
+    b1.config(state=DISABLED) #zmena stavu tlacidla1 na neaktivne
+    pohyb.start()
+    thread_p1.start()
+    thread_p2.start()
 
-ml.mainloop()
+    mainloop() #koniec hlavnej casti programu
+
+b1=Button(master, text='Start game',command=main) #tlacidol1
+b1.pack()
+b2=Button(master, text='Cancel game',command=quit) #tlacidlo2
+b2.pack()
