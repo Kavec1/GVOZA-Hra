@@ -7,3 +7,4 @@ Ovládnie - Skoro
 Threading - 
 Zvuk??? -
 Dokumentácia - Done
+Pružné rozlíšenie -
