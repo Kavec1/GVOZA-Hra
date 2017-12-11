@@ -5,9 +5,10 @@ from my_threading import *
 
 def main():
     b1.config(state=DISABLED) #zmena stavu tlacidla1 na neaktivne
-    pohyb.start()
-    thread_p1.start()
-    thread_p2.start()
+    pohyb.start() #aktivacia pohybu rakety
+    thread_p1.start() #vytvaranie priseriek1
+    thread_p2.start() #vytvaranie priseriek1
+    #thread_p2.start() #vytvaranie priseriek1
 
     mainloop() #koniec hlavnej casti programu
 
