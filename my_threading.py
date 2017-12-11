@@ -1,7 +1,9 @@
 import threading
 from move import *
+from objects import *
 
 def pohyb_raketa():
+    raketka(0,0)
     c.bind('<Motion>', move_raketa)
     
 def make_p1():
@@ -35,7 +37,7 @@ def make_p3():
         sleep(10)
         
 #definovanie vlakien programu
-pohyb = threading.Thread(target=pohyb_raketa)
-thread_p1 = threading.Thread(target=make_p1)
-thread_p2 = threading.Thread(target=make_p2)
-thread_31 = threading.Thread(target=make_p3)
+pohyb = threading.Thread(target=pohyb_raketa, name='raketka')
+thread_p1 = threading.Thread(target=make_p1, name='priserka1')
+thread_p2 = threading.Thread(target=make_p2, name='priserka2')
+thread_31 = threading.Thread(target=make_p3, name='priserka3')
