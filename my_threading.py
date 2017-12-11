@@ -5,21 +5,33 @@ def pohyb_raketa():
     c.bind('<Motion>', move_raketa)
     
 def make_p1():
+    a=-1
+    tad=''
     while(1):
-        priserka1(randint(0,800),randint(0,1000))
-        print('priserka1 zije')
+        a+=1
+        tag='p1_'+str(a)
+        priserka1(randint(0,800),randint(0,1000),tag)
+        print(tag+' zije')
         sleep(5)
 
 def make_p2():
+    a=-1
+    tad=''
     while(1):
-        priserka2(randint(0,800),randint(0,1000))
-        print('priserka2 zije')
+        a+=1
+        tag='p2_'+str(a)
+        priserka2(randint(0,800),randint(0,1000),tag)
+        print(tag+' zije')
         sleep(7.5)
 
 def make_p3():
+    a=-1
+    tad=''
     while(1):
-        priserka3(randint(0,800),randint(0,1000))
-        print('priserka3 zije')
+        a+=1
+        tag='p3_'+str(a)
+        priserka3(randint(0,800),randint(0,1000),tag)
+        print(tag+' zije')
         sleep(10)
         
 #definovanie vlakien programu
