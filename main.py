@@ -12,7 +12,7 @@ def main():
 
     mainloop() #koniec hlavnej casti programu
 
-b1=Button(master, text='Start game',command=main) #tlacidol1
+b1=Button(text='Start game',command=main) #tlacidol1
 b1.pack()
-b2=Button(master, text='Cancel game',command=quit) #tlacidlo2
+b2=Button(text='Cancel game',command=quit) #tlacidlo2
 b2.pack()
