@@ -1,6 +1,6 @@
 import threading
 from move import *
-from randm import *
+from random import *
 from objects import *
 from time import *
 
