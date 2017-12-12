@@ -8,3 +8,4 @@ Threading -
 Zvuk??? -
 Dokumentácia - Done
 Pružné rozlíšenie -
+Log file -
