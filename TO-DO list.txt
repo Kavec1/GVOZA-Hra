@@ -7,5 +7,5 @@ Ovládnie - Skoro
 Threading - 
 Zvuk??? -
 Dokumentácia - Done
-Pružné rozlíšenie -
+Pružné rozlíšenie - Done
 Log file -
