@@ -10,3 +10,4 @@ Dokumentácia - Done
 Pružné rozlíšenie - Done
 Log file??? -
 Zvuk??? -
+Prekrývanie príšeriek -
