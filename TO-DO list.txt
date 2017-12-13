@@ -1,9 +1,10 @@
 Príšerky - 2/3 
 Raketka - Done
-Prostredie - 
+Prostredie - Done
 Hitboxy -
 Skóre -
-Ovládnie - Skoro
+Label /w variable -
+Ovládnie - Done
 Threading - 
 Zvuk??? -
 Dokumentácia - Done
