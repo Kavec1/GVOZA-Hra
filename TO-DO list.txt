@@ -5,8 +5,8 @@ Hitboxy -
 Skóre -
 Label /w variable -
 Ovládnie - Done
-Threading - 
-Zvuk??? -
+Threading - Done
 Dokumentácia - Done
 Pružné rozlíšenie - Done
-Log file -
+Log file??? -
+Zvuk??? -
