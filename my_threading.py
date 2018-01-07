@@ -5,16 +5,19 @@ from random import *
 from objects import *
 from time import *
 
+#vlakno programu starajuce sa o pohyb rakety
 def pohyb_raketa():
     raketka(0,0)
     c.bind('<Motion>', move_raketa)
     c.bind('<Button-1>', vystrel)
 
-def del_strela():
+#vlakno programu starajuce sa o zmazanie strely (zlta ciara)
+def del_strela(): 
     while (1):
         sleep(.3)        
         c.delete('strela')
 
+#vlakna programu starajuce sa o vykreslenie priseriek p1, p2 a p3
 def make_p1():
     a=-1
     tad=''
