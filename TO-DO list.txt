@@ -3,6 +3,7 @@ Raketka - Done
 Prostredie - Done
 Hitboxy -
 Skóre -
+Zapisovanie najvyššieho skóre do súboru -
 Label /w variable -
 Ovládnie - Done
 Threading - Done
