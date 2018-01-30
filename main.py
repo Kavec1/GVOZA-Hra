@@ -13,8 +13,7 @@ def main():
     del_strela.start()
     thread_p1.start() #vytvaranie priseriek1
     thread_p2.start() #vytvaranie priseriek1
-    #thread_p2.start() #vytvaranie priseriek1
-	    
+    #thread_p3.start() #vytvaranie priseriek1
 
     mainloop() #koniec hlavnej casti programu
 
@@ -25,5 +24,3 @@ b2.pack()
 v = StringVar()
 Label(textvariable=v).pack() 
 v.set('Score: ')
-
-
