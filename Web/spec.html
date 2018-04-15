@@ -13,5 +13,238 @@
 		<li><a href="spec.html">Špecifikácie</a></li>
 		<li><a href="about.html">O nás</a></li>
 	</ul>
+
+	<p class="init">
+		<h2>init.py</h2>
+		<pre>
+			<code>
+user32 = ctypes.windll.user32
+width=user32.GetSystemMetrics(0) #funkcia, ktora si pyta sirku obrazovky
+height=user32.GetSystemMetrics(1) #funkcia, ktora si pyta vysku obrazovky
+print('Width: '+str(width))
+print('Height: '+str(height))
+ml = Tk()
+ml.attributes("-fullscreen",True) #vec ktora nastavuje okna na celu obrazovku
+c=Canvas(width=width, height=(height-100), bg='black') #nastavenie rozmerov okna
+c.pack()
+			</code>
+		</pre>
+	</p>
+
+	<p class="main">
+		<h2>main.py</h2>
+		<pre>
+			<code>
+from init import *
+from objects import *
+from move import *
+from my_threading import *
+
+def main():
+    c.create_text(width/2, height-150, text='SAVE ZONE', font='Arial 25 bold', fill='red')
+    c.create_line(0,height-230,width,height-230, fill='red')
+    for i in range(0,width,50):
+    	c.create_line(i,height,i+50,height-230, fill='red')
+    b1.config(state=DISABLED) #zmena stavu tlacidla1 na neaktivne
+    pohyb.start() #aktivacia pohybu rakety
+    del_strela.start()
+    thread_p1.start() #vytvaranie priseriek1
+    thread_p2.start() #vytvaranie priseriek1
+    #thread_p3.start() #vytvaranie priseriek1
+
+    mainloop() #koniec hlavnej casti programu
+
+b1=Button(text='Start game',command=main) #tlacidol1
+b1.pack()
+b2=Button(text='Cancel game',command=quit) #tlacidlo2
+b2.pack()
+v = StringVar()
+Label(textvariable=v).pack() 
+v.set('Score: ')
+			</code>
+		</pre>
+	</p>
+
+	<p class="move">
+		<h2>move.py</h2>
+		<pre>
+			<code>
+from init import *
+
+x=[0,0]
+y=[0,0]
+def move_raketa(udalost): #funkcia, ktora pohybuje objektom na zaklade pozicie mysi
+    x[0]=udalost.x
+    y[0]=udalost.y
+    print(str(x),str(y))    
+    print(str(x[1]-x[0]),str(y[1]-y[0]))
+    c.move('raketa', -(x[1]-x[0]), -(y[1]-y[0]))
+    x[1]=x[0]
+    y[1]=y[0]
+
+def vystrel(suradnice): #funkcia, ktora vykresli strelu (zltu ciaru)
+	a=suradnice.x
+	b=suradnice.y
+	global hitbox
+	i=b-20
+	while hitbox[i][a+5]==0:
+		if i==0:
+			break
+		i-=1
+	print('strela:'+str(i))
+	print(str(hitbox[i][a+5]))
+	c.delete('p'+str(hitbox[i][a+5]))
+	c.create_line(a+5,b-20,a+5,i-10, fill='yellow', tag='strela', width=5)
+	#del_strela.start()
+	for j in range(a-20,a+20):
+		hitbox[i][j]=int(0)
+
+from my_threading import *
+			</code>
+		</pre>
+	</p>
+
+	<p class="my_threading">
+		<h2>my_threading.py</h2>
+		<pre>
+			<code>
+import threading
+from init import *
+from move import *
+from random import *
+from objects import *
+from time import *
+
+hitbox=[]
+for i in range(height):
+    temp=[]
+    for j in range(width):
+        temp.append(0)
+    hitbox.append(temp)
+    #hitbox[y][x]
+#vlakno programu starajuce sa o pohyb rakety
+def pohyb_raketa():
+    raketka(0,0)
+    c.bind('<Motion>', move_raketa)
+    c.bind('<Button-1>', vystrel)
+
+#vlakno programu starajuce sa o zmazanie strely (zlta ciara)
+def del_strela():
+    sleep(.5)        
+    c.delete('strela')
+    '''print(str(del_strela._is_stopped()))
+    del_strela._stop()
+    print(str(del_strela._is_stopped()))
+    treba opraviť'''
+#vlakna programu starajuce sa o vykreslenie priseriek p1, p2 a p3
+def make_p1():
+    a=0
+    tag=''
+    global hitbox
+    while(1):
+        tag='1'+str(a)
+        x=randint(25,width-25)
+        y=randint(25,height-250)
+        #c.create_rectangle(x-25,y-20,x+25,y+20,outline='white')
+        priserka1(x,y,tag)
+        for i in range(x-20,x+20):
+            hitbox[y+25][i]=int(tag)        
+        print(tag+' zije')
+        a+=1
+        sleep(1)
+
+def make_p2():
+    a=0
+    tag=''
+    global hitbox
+    while(1):
+        tag='2'+str(a)
+        x=randint(25,width-25)
+        y=randint(25,height-250)
+        #c.create_rectangle(x-20,y-20,x+20,y+20,outline='white')
+        priserka2(x,y,tag)
+        for i in range(x-20,x+20):
+            hitbox[y+20][i]=int(tag)
+        print(tag+' zije')
+        a+=1
+        sleep(2.5)
+
+def make_p3():
+    a=0
+    tag=''
+    global hitbox
+    while(1):
+        tag='3'+str(a)
+        x=randint(25,width-25)
+        y=randint(25,height-250)
+        #c.create_rectangle(x-20,y-20,x+20,y+20,outline='white')
+        priserka3(x,y,tag)
+        for i in range(x-20,x+20):
+            hitbox[y+20][i]=int(tag)
+        print(tag+' zije')
+        a+=1
+        sleep(5)
+        
+#definovanie vlakien programu
+pohyb = threading.Thread(target=pohyb_raketa, name='raketka')
+thread_p1 = threading.Thread(target=make_p1, name='priserka1')
+thread_p2 = threading.Thread(target=make_p2, name='priserka2')
+thread_p3 = threading.Thread(target=make_p3, name='priserka3')
+del_strela = threading.Thread(target=del_strela, name='strela')
+			</code>
+		</pre>
+	</p>
+
+	<p class="objects">
+		<h2>objects.py</h2>
+		<pre>
+			<code>
+from init import *
+
+#objekt priserka1
+def priserka1(x,y,tag):
+  c.create_rectangle(x-10,y-20,x+10,y-15, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-20,y-15,x+20,y-10, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-25,y-10,x+25,y+5, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-20,y-5,x-10,y,fill='black', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x+10,y-5,x+20,y, fill='black', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-15,y+5,x-10,y+10, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x+10,y+5,x+15,y+10, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-20,y+10,x-15,y+15, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-10,y+10,x+10,y+15, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x+15,y+10,x+20,y+15, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x-25,y+15,x-20,y+20, fill='blue', outline='blue', tag=('p'+str(tag)))
+  c.create_rectangle(x+20,y+15,x+25,y+20, fill='blue', outline='blue', tag=('p'+str(tag)))
+  
+#objekt priserka2  
+def priserka2(x,y,tag):
+  c.create_rectangle(x-5,y-20,x+5,y-15, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-10,y-15,x+10,y-10, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-15,y-10,x+15,y-5, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-20,y-5,x+20,y+5, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-10,y-5,x-5,y, fill='black', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x+5,y-5,x+10,y, fill='black', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-10,y+5,x-5,y+10, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x+5,y+5,x+10,y+10, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-15,y+10,x-10,y+15, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-5,y+10,x+5,y+15, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x+10,y+10,x+15,y+15, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-20,y+15,x-15,y+20, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x-10,y+15,x-5,y+20, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x+5,y+15,x+10,y+20, fill='green', outline='green', tag=('p'+str(tag)))
+  c.create_rectangle(x+15,y+15,x+20,y+20, fill='green', outline='green', tag=('p'+str(tag)))
+
+#objekt priserka3
+def priserka3(x,y,tag):
+  pass
+
+#objekt raketa
+def raketka(x,y):
+  c.create_rectangle(x,y-20,x+10,y-10,fill='white', outline='white', tag='raketa')
+  c.create_rectangle(x-20,y-10,x+30,y+10,fill='white', outline='white', tag='raketa')
+  c.create_rectangle(x-30,y+10,x+40,y+20,fill='white', outline='white', tag='raketa')
+			</code>
+		</pre>
+	</p>
 </body>
 </html>
