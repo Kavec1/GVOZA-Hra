@@ -1,0 +1,44 @@
+body{
+	background-image: url("background.png");
+	background-repeat: no-repeat;	
+    background-size: auto;
+    background-attachment: fixed;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #4d0038;
+}
+li a{
+    display: block;
+    font-size: 2em;
+    border: 1px solid #bbb;
+    padding: 14px 16px;
+    color: white;
+    text-decoration: none;
+}
+li a:hover{
+	background-color: white;
+    color: #4d0038;
+}
+.table{
+    color: white;
+    float: right;
+}
+.table th, td{
+    border: 1px dotted #4d0038;
+    width: 30%;
+}
+.table table{
+    border: 1px solid #4d0038;
+    border-spacing: 5px;
+}
+.potvorka{
+    text-align: center;
+}
+.dok{
+    color: yellow;
+    width: 50%;
+}
