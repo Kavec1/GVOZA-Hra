@@ -23,9 +23,19 @@ li a:hover{
 	background-color: white;
     color: #4d0038;
 }
+h1{
+    background-color: grey;
+    display: inline-block;
+}
+h2{
+    background-color: grey;
+    display: inline-block;
+}
 .table{
     color: white;
-    float: right;
+    position: absolute;
+    left: 80%;
+    top: 6%;
 }
 .table th, td{
     border: 1px dotted #4d0038;
@@ -33,13 +43,36 @@ li a:hover{
 }
 .table table{
     border: 1px solid #4d0038;
-    border-collapse: separate;
     border-spacing: 5px;
+}
+.table h2{
+    color: black;
+}
+.table p{
+    color: black;
 }
 .potvorka{
     text-align: center;
 }
-.dok{
-    color: yellow;
+.pixels{
+    position: absolute;
+    left: 43%;
+    top: 2%;
+    width: 400px;
+    height: 230px;
+}
+.wargames{
+    position: absolute;
+    left: 63%;
+    top: 63%;
+    width: 400px;
+    height: 280px;
+}
+p{
     width: 50%;
+    background-color: rgba(173,153,102,0.65);
+}
+pre{
+    background-color: rgba(51,102,0,0.65);
+    width: 48%; 
 }
