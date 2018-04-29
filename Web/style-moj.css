@@ -1,5 +1,5 @@
 body{
-	background-image: url("background.png");
+	background-image: url("Bez názvu.png");
 	background-repeat: no-repeat;	
     background-size: auto;
     background-attachment: fixed;
@@ -70,9 +70,74 @@ h2{
 }
 p{
     width: 50%;
+    padding: 5px 5px;
     background-color: rgba(173,153,102,0.65);
 }
 pre{
-    background-color: rgba(51,102,0,0.65);
-    width: 48%; 
+    background-color: rgba(173,153,102,0.65);
+    padding: 5px 5px;
+}
+.odsek{
+	background-color: rgba(173,153,102,0.65);
+    display: inline-block;
+    padding: 5px 5px;
+    position: absolute;
+    top: 38%;
+    left: 1%;
+    text-align: center;
+    font-size: 2em;
+    transform: rotate(30deg);
+}
+.init{
+	position: absolute;
+	left: 20%; 
+	top: 1%;
+	font-size: 1.05em;
+}
+.main{
+	position: absolute;
+	left: 54%; 
+	top: 1%;
+	font-size: 1.05em;
+}
+.move{
+	position: absolute;
+	left: 20%; 
+	top: 29%;
+	font-size: 1.05em;
+}
+.my_threading{
+	position: absolute;
+	left: 20%; 
+	top: 94%;
+	font-size: 1.05em;
+}
+.objects{
+	position: absolute;
+	left: 54%;
+	top: 58%;
+	font-size: 1.05em;
+}
+.button{
+    position: absolute;
+    left: 16%;
+    top: 10%;
+    width: 150px;
+    height: 50px;
+    font-size: 2em;
+}
+.ja{
+    height: 15%;
+}
+.bea{
+    height: 47%;
+}
+.obaja{
+    height: 85%;
+}
+.about td{
+    text-align: center;
+}
+.about{
+    color: white;
 }
